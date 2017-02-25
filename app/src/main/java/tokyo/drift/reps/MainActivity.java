@@ -1,5 +1,6 @@
 package tokyo.drift.reps;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             List<String> exerciseData = new ArrayList<>(Arrays.asList(dummyData));
 
-            ArrayAdapter<String> mExerciseAdapter = new ArrayAdapter<>(
+            final ArrayAdapter<String> mExerciseAdapter = new ArrayAdapter<>(
                     getActivity(),
                     R.layout.list_item_exercise,
                     R.id.list_item_exercise_textview,
@@ -60,6 +63,23 @@ public class MainActivity extends AppCompatActivity {
 
             ListView exerciseListView = (ListView) rootView.findViewById(R.id.listview_exercise);
             exerciseListView.setAdapter(mExerciseAdapter);
+
+            exerciseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    String exercise = mExerciseAdapter.getItem(position);
+
+                    Intent intent = new Intent(getActivity(), ExerciseDetailActivity.class)
+                            .putExtra(Intent.EXTRA_TEXT, exercise);
+
+                    startActivity(intent);
+
+                    //Toast.makeText(getContext(), exercise, Toast.LENGTH_SHORT).show();
+                }
+
+            });
+
             return rootView;
         }
 
