@@ -9,5 +9,11 @@
         android:defaultValue="metric"
         android:entryValues="@array/unit_values"
         android:entries="@array/unit_options" />
-    
+
+    <EditTextPreference
+        android:title="Rest Time"
+        android:key="rest_time"
+        android:defaultValue="60"
+        android:inputType="number" />
+
 </PreferenceScreen>

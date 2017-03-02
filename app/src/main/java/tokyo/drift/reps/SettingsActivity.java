@@ -1,6 +1,7 @@
 package tokyo.drift.reps;
 
 import android.os.Bundle;
+import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -18,6 +19,7 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
         addPreferencesFromResource(R.xml.pref_general);
 
         bindPreferenceValue(findPreference("units"));
+        bindPreferenceValue(findPreference("rest_time"));
     }
 
     private void bindPreferenceValue(Preference preference) {
@@ -39,6 +41,11 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
             if (prefIndex >= 0) {
                 pref.setSummary(val);
             }
+        }
+        else if (pref instanceof EditTextPreference) {
+            EditTextPreference editTextPref = (EditTextPreference) pref;
+
+            editTextPref.setSummary(val);
         }
         return true;
     }
