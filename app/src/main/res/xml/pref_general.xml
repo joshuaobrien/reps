@@ -9,5 +9,5 @@
         android:defaultValue="metric"
         android:entryValues="@array/unit_values"
         android:entries="@array/unit_options" />
-
+    
 </PreferenceScreen>
