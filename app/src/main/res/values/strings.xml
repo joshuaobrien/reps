@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">reps</string>
+    <string name="app_name">Reps</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Prefs -->
+    <string name="pref_label_units">Units</string>
+    <string name="pref_key_units">units</string>
+    <string name="pref_default_units">Metric</string>
+
+    <string name="pref_label_rest">Rest Time</string>
+    <string name="pref_key_rest">rest_time</string>
+    <string name="pref_default_rest">60</string>
 </resources>

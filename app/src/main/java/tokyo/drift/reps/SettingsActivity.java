@@ -18,8 +18,8 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pref_general);
 
-        bindPreferenceValue(findPreference("units"));
-        bindPreferenceValue(findPreference("rest_time"));
+        bindPreferenceValue(findPreference(getString(R.string.pref_key_units)));
+        bindPreferenceValue(findPreference(getString(R.string.pref_key_rest)));
     }
 
     private void bindPreferenceValue(Preference preference) {

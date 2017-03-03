@@ -4,16 +4,16 @@
     android:layout_height="match_parent">
 
     <ListPreference
-        android:title="Units"
-        android:key="units"
-        android:defaultValue="metric"
+        android:title="@string/pref_label_units"
+        android:key="@string/pref_key_units"
+        android:defaultValue="@string/pref_default_units"
         android:entryValues="@array/unit_values"
         android:entries="@array/unit_options" />
 
     <EditTextPreference
-        android:title="Rest Time"
-        android:key="rest_time"
-        android:defaultValue="60"
+        android:title="@string/pref_label_rest"
+        android:key="@string/pref_key_rest"
+        android:defaultValue="@string/pref_default_rest"
         android:inputType="number" />
 
 </PreferenceScreen>
